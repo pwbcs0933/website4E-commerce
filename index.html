@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional E-commerce Website</title>
+
+     <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom CSS for the button */
+        .btn-primary-custom {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary-custom:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        /* Custom CSS for the card */
+        .card {
+            border: 1px solid #e2e2e2;
+            transition: all 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img-top {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+                /* Custom CSS for the form */
+                .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #80bdff;
+        }
+
+        .btn-primary-custom {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .btn-primary-custom:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="overlay" data-overlay></div>
+
+    <!--
+      - MODAL
+    -->
+  
+    <div class="modal" data-modal>
+  
+      <div class="modal-close-overlay" data-modal-overlay></div>
+  
+      <div class="modal-content">
+  
+        <button class="modal-close-btn" data-modal-close>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+  
+        <div class="newsletter-img">
+          <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+        </div>
+  
+        <div class="newsletter">
+  
+          <form action="#">
+  
+            <div class="newsletter-header">
+  
+              <h3 class="newsletter-title">Subscribe Newsletter.</h3>
+  
+              <p class="newsletter-desc">
+                Subscribe the <b>Maaz</b> to get latest products and discount update.
+              </p>
+  
+            </div>
+  
+            <input type="email" name="email" class="email-field" placeholder="Email Address" required>
+  
+            <button type="submit" class="btn-newsletter">Subscribe</button>
+  
+          </form>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  
+  
+   <!--
+      - NOTIFICATION TOAST
+    -->
+  
+    <div class="notification-toast" data-toast>
+  
+      <button class="toast-close-btn" data-toast-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+  
+  
+  
+   <!--
+      - HEADER
+    -->
+  
+    <header>
+  
+      <div class="header-top">
+  
+        <div class="container">
+  
+          <ul class="header-social-container">
+  
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+  
+          <div class="header-alert-news">
+            <p>
+              <b>Shoping With Maaz</b>
+              This Week Order Over - $55 OFF
+            </p>
+          </div>
+  
+          <div class="header-top-actions">
+  
+            <select name="currency">
+  
+              <option value="usd">USD &dollar;</option>
+              <option value="eur">EUR &euro;</option>
+  
+            </select>
+  
+            <select name="language">
+  
+              <option value="en-US">English</option>
+              <option value="es-ES">Espa&ntilde;ol</option>
+              <option value="fr">Fran&ccedil;ais</option>
+  
+            </select>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <div class="header-main">
+  
+        <div class="container">
+  
+          <a href="#" class="header-logo">
+            <img src="logo.svg" alt="Maaz's logo" width="120" height="36">
+          </a>
+  
+          <div class="header-search-container">
+  
+            <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+  
+            <button class="search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+  
+          </div>
+  
+          <div class="header-user-actions">
+  
+            <button class="action-btn">
+              <ion-icon name="person-outline"></ion-icon>
+            </button>
+  
+            <button class="action-btn">
+              <ion-icon name="heart-outline"></ion-icon>
+              <span class="count">0</span>
+            </button>
+  
+            <button class="action-btn">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+              <span class="count">0</span>
+            </button>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+
+      <nav class="desktop-navigation-menu">
+        <div class="container">
+            <ul class="desktop-menu-category-list">
+                <li class="menu-category">
+                    <a href="#" class="menu-title">Home</a>
+                </li>
+                <li class="menu-category">
+                    <a href="#product-a" class="menu-title">Products</a>
+                </li>
+                <li class="menu-category">
+                    <a href="#contact" class="menu-title">Contact Us</a>
+                </li>
+                <li class="menu-category">
+                    <a href="#footer" class="menu-title">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <style>
+        .desktop-navigation-menu {
+            background-color: #f8f9fa; /* Set your desired background color */
+            padding: 10px 0;
+        }
+    
+        .desktop-menu-category-list {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .menu-category {
+            margin: 0 15px;
+        }
+    
+        .menu-title {
+            text-decoration: none;
+            color: #333; /* Set your desired text color */
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .menu-title:hover {
+            background-color: #007bff; /* Set your desired hover background color */
+            color: #fff; /* Set your desired hover text color */
+        }
+        /* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .desktop-menu-category-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-category {
+        margin: 10px 0;
+    }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 768px) {
+    .desktop-navigation-menu {
+        padding: 10px 20px; /* Adjust the padding as needed */
+    }
+    
+    .desktop-menu-category-list {
+        flex-wrap: wrap;
+    }
+    
+    .menu-category {
+        flex: 1;
+    }
+}
+
+    </style>
+    </header>
+  
+     <!--
+    - MAIN
+  -->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+    <div class="banner">
+
+      <div class="container">
+
+        <div class="slider-container has-scrollbar">
+          <div class="slider-item">
+
+            <img src="banner-3.jpg" alt="modern sunglasses" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="banner-3.jpg" alt="new fashion summer sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Sale Offer</p>
+
+              <h2 class="banner-title">New fashion summer sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>29</b>.99
+              </p>
+
+              <a href="#" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <!-- Hero Section -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Featured Product or Category</h1>
+        <p class="lead">Description of the product or category.</p>
+        <a class="btn btn-primary btn-lg cta-btn" href="#product-listings" role="button">Shop Now</a>
+    </div>
+
+    <!-- Product Listings Section -->
+    <section id="product-a">
+    <div class="container mt-5" id="product-listings">
+        <h2 class="text-center mb-4">Featured Products</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="jacket-6.jpg" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-title">Product Title 1</h4>
+                        <h5 class="text-muted">$24.99</h5>
+                        <p class="card-text">Brief description of the product.</p>
+                        <a href="product-page-1.html" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="watch-1.jpg" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-title">Product Title 2</h4>
+                        <h5 class="text-muted">$19.99</h5>
+                        <p class="card-text">Brief description of the product.</p>
+                        <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="shoe-4.jpg" alt="Product Image">
+                    <div class="card-body">
+                        <h4 class="card-title">Product Title 2</h4>
+                        <h5 class="text-muted">$19.99</h5>
+                        <p class="card-text">Brief description of the product.</p>
+                        <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card h-100">
+                  <img class="card-img-top" src="shirt-1.jpg" alt="Product Image">
+                  <div class="card-body">
+                      <h4 class="card-title">Product Title 2</h4>
+                      <h5 class="text-muted">$19.99</h5>
+                      <p class="card-text">Brief description of the product.</p>
+                      <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" src="watch-2.jpg" alt="Product Image">
+                <div class="card-body">
+                    <h4 class="card-title">Product Title 2</h4>
+                    <h5 class="text-muted">$19.99</h5>
+                    <p class="card-text">Brief description of the product.</p>
+                    <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+              <img class="card-img-top" src="party-wear-1.jpg" alt="Product Image">
+              <div class="card-body">
+                  <h4 class="card-title">Product Title 2</h4>
+                  <h5 class="text-muted">$19.99</h5>
+                  <p class="card-text">Brief description of the product.</p>
+                  <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+            <img class="card-img-top" src="perfume.jpg" alt="Product Image">
+            <div class="card-body">
+                <h4 class="card-title">Product Title 2</h4>
+                <h5 class="text-muted">$19.99</h5>
+                <p class="card-text">Brief description of the product.</p>
+                <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+          <img class="card-img-top" src="sports-2.jpg" alt="Product Image">
+          <div class="card-body">
+              <h4 class="card-title">Product Title 2</h4>
+              <h5 class="text-muted">$19.99</h5>
+              <p class="card-text">Brief description of the product.</p>
+              <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-4 col-md-6 mb-4">
+    <div class="card h-100">
+        <img class="card-img-top" src="sports-5.jpg" alt="Product Image">
+        <div class="card-body">
+            <h4 class="card-title">Product Title 2</h4>
+            <h5 class="text-muted">$19.99</h5>
+            <p class="card-text">Brief description of the product.</p>
+            <a href="product-page-2.html" class="btn btn-primary">Shop Now</a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container mt-5">
+      <form id="contactForm">
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+              <div class="invalid-feedback">
+                  Please enter your name.
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+              <div class="invalid-feedback">
+                  Please enter a valid email address.
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter subject" required>
+              <div class="invalid-feedback">
+                  Please enter a subject.
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+              <div class="invalid-feedback">
+                  Please enter a message.
+              </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+</section>
+
+    <footer class="container mt-5">
+      
+  <section id="footer">
+      <div class="row">
+          <div class="col-md-6 text-center">
+              <h4>About Us</h4>
+              <p>E-Commerce</p>
+              <p>Address: xyz</p>
+              <p>Phone: 0341*******</p>
+          </div>
+          <div class="col-md-6 text-center">
+              <h4>Connect with Us</h4>
+              <p>Email: XYZ@gmail.com</p>
+              <p>Address: XYZ</p>
+              <p>Phone: 0341*******</p>
+              <div class="social-icons">
+                  <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+      </div>
+      <div class="row mt-4">
+          <div class="col text-center">
+              <p>&copy; 2023 Your Company. All Rights Reserved</p>
+          </div>
+      </div>
+    </section>
+  </footer>
+  
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
